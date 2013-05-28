@@ -1,0 +1,91 @@
+@import "compass"
+
+$marks: sprite-map("runes/mark/*.png")
+
+@each $i in sprite_names($marks)
+	.icn-#{$i}
+		background: $marks
+		background-position: sprite-position($marks, $i)
+		+sprite-dimensions($marks, $i)
+		display: inline-block 
+
+body
+	padding-top: 60px
+
+.rune-page
+	background-image: image-url('runes/background.png')
+	height: 436px
+	position: relative
+	width: 655px
+
+	.rune
+		position: absolute
+		z-index: 2
+		width: 49px
+		height: 55px
+		background-size: 49px
+
+	.quintessence
+		position: absolute
+		width: 100px
+		height: 100px
+		background-size: 100px
+
+	// MARK
+	$markPosition: (1 370px 24px), (2 370px 86px), (3 371px 158px), (4 312px 8px), (5 311px 70px), (6 323px 125px), (7 254px 29px), (8 264px 113px), (9 226px 76px)
+	@each $p in $markPosition
+		.mark#{nth($p, 1)}
+			top: nth($p, 2)
+			left: nth($p, 3)
+
+	div[class*=mark]
+		&.empty
+			background-image: image-url('runes/mark/mark.png')
+
+	// SEAL
+	$sealPosition: (1 185px 38px), (2 179px 107px), (3 138px 66px), (4 112px 119px), (5 70px 154px), (6 43px 204px), (7 24px 265px), (8 5px 343px), (9 55px 371px)
+	@each $s in $sealPosition
+		.seal#{nth($s, 1)}
+			top: nth($s, 2)
+			left: nth($s, 3)
+	
+	div[class*=seal]
+		&.empty
+			background-image: image-url('runes/seal/seal.png')
+
+	// GLYPH
+	$glyphPosition: (1 6px 399px), (2 8px 463px), (3 6px 550px), (4 53px 431px), (5 40px 507px), (6 40px 599px), (7 87px 482px), (8 79px 555px), (9 133px 576px)
+	@each $g in $glyphPosition
+		.glyph#{nth($g, 1)}
+			top: nth($g, 2)
+			left: nth($g, 3)
+
+	div[class*=glyph]
+		&.empty
+			background-image: image-url('runes/glyph/glyph.png')
+
+	// QUINTESSENCE
+	$quintessencePosition: (1 168px 403px), (2 224px 182px), (3 39px 28px)
+	@each $q in $quintessencePosition
+		.quintessence#{nth($q, 1)}
+			top: nth($q, 2)
+			left: nth($q, 3)
+
+	div[class*=quintessence]
+		&.empty
+			background-image: image-url('runes/quintessence/quintessence.png')
+
+.rune-type
+	width: 200px
+
+.accordion-inner 
+	padding: 0
+
+	ul
+		margin: 0
+		list-style: none
+
+		li
+			span.mark
+				zoom: .4
+				margin: 10px 20px 0 10px

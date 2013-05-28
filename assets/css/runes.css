@@ -1,0 +1,164 @@
+.icn-mark {
+  background: url('../img/runes/mark-sb5c6b72485.png');
+  background-position: 0 -968px;
+  height: 56px;
+  width: 49px;
+  display: inline-block; }
+
+.icn-r1-3 {
+  background: url('../img/runes/mark-sb5c6b72485.png');
+  background-position: 0 -726px;
+  height: 242px;
+  width: 215px;
+  display: inline-block; }
+
+.icn-r2_3 {
+  background: url('../img/runes/mark-sb5c6b72485.png');
+  background-position: 0 -242px;
+  height: 242px;
+  width: 215px;
+  display: inline-block; }
+
+.icn-r3_3 {
+  background: url('../img/runes/mark-sb5c6b72485.png');
+  background-position: 0 -484px;
+  height: 242px;
+  width: 215px;
+  display: inline-block; }
+
+.icn-r4_3 {
+  background: url('../img/runes/mark-sb5c6b72485.png');
+  background-position: 0 0;
+  height: 242px;
+  width: 215px;
+  display: inline-block; }
+
+body {
+  padding-top: 60px; }
+
+.rune-page {
+  background-image: url('../img/runes/background.png?1369738853');
+  height: 436px;
+  position: relative;
+  width: 655px; }
+  .rune-page .rune {
+    position: absolute;
+    z-index: 2;
+    width: 49px;
+    height: 55px;
+    background-size: 49px; }
+  .rune-page .quintessence {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-size: 100px; }
+  .rune-page .mark1 {
+    top: 370px;
+    left: 24px; }
+  .rune-page .mark2 {
+    top: 370px;
+    left: 86px; }
+  .rune-page .mark3 {
+    top: 371px;
+    left: 158px; }
+  .rune-page .mark4 {
+    top: 312px;
+    left: 8px; }
+  .rune-page .mark5 {
+    top: 311px;
+    left: 70px; }
+  .rune-page .mark6 {
+    top: 323px;
+    left: 125px; }
+  .rune-page .mark7 {
+    top: 254px;
+    left: 29px; }
+  .rune-page .mark8 {
+    top: 264px;
+    left: 113px; }
+  .rune-page .mark9 {
+    top: 226px;
+    left: 76px; }
+  .rune-page div[class*=mark].empty {
+    background-image: url('../img/runes/mark/mark.png?1369754768'); }
+  .rune-page .seal1 {
+    top: 185px;
+    left: 38px; }
+  .rune-page .seal2 {
+    top: 179px;
+    left: 107px; }
+  .rune-page .seal3 {
+    top: 138px;
+    left: 66px; }
+  .rune-page .seal4 {
+    top: 112px;
+    left: 119px; }
+  .rune-page .seal5 {
+    top: 70px;
+    left: 154px; }
+  .rune-page .seal6 {
+    top: 43px;
+    left: 204px; }
+  .rune-page .seal7 {
+    top: 24px;
+    left: 265px; }
+  .rune-page .seal8 {
+    top: 5px;
+    left: 343px; }
+  .rune-page .seal9 {
+    top: 55px;
+    left: 371px; }
+  .rune-page div[class*=seal].empty {
+    background-image: url('../img/runes/seal/seal.png?1369754753'); }
+  .rune-page .glyph1 {
+    top: 6px;
+    left: 399px; }
+  .rune-page .glyph2 {
+    top: 8px;
+    left: 463px; }
+  .rune-page .glyph3 {
+    top: 6px;
+    left: 550px; }
+  .rune-page .glyph4 {
+    top: 53px;
+    left: 431px; }
+  .rune-page .glyph5 {
+    top: 40px;
+    left: 507px; }
+  .rune-page .glyph6 {
+    top: 40px;
+    left: 599px; }
+  .rune-page .glyph7 {
+    top: 87px;
+    left: 482px; }
+  .rune-page .glyph8 {
+    top: 79px;
+    left: 555px; }
+  .rune-page .glyph9 {
+    top: 133px;
+    left: 576px; }
+  .rune-page div[class*=glyph].empty {
+    background-image: url('../img/runes/glyph/glyph.png?1369754762'); }
+  .rune-page .quintessence1 {
+    top: 168px;
+    left: 403px; }
+  .rune-page .quintessence2 {
+    top: 224px;
+    left: 182px; }
+  .rune-page .quintessence3 {
+    top: 39px;
+    left: 28px; }
+  .rune-page div[class*=quintessence].empty {
+    background-image: url('../img/runes/quintessence/quintessence.png?1369754744'); }
+
+.rune-type {
+  width: 200px; }
+
+.accordion-inner {
+  padding: 0; }
+  .accordion-inner ul {
+    margin: 0;
+    list-style: none; }
+    .accordion-inner ul li span.mark {
+      zoom: 0.4;
+      margin: 10px 20px 0 10px; }
