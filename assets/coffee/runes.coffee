@@ -1,55 +1,72 @@
-# document.ondblclick = function(evt) 
-#     if (window.getSelection)
-#         window.getSelection().removeAllRanges();
-#     else if (document.selection)
-#         document.selection.empty();
-
-$ ->
-  $.extend $.fn.disableTextSelect = ->
-    @each ->
-    	$(this).mousedown ->
-        	false
-
 $(document).ready ->
+
+	#
+	# Make rune collapsable
+	#
+
 	$(".collapse").collapse()
 
-	# $("li span").disableTextSelect()
-	$("ul.marks").on 'dblclick', (e) ->
-		e.preventDefault()
-		console.log 'toto'
-		return false
+	#
+	# Add mark to rune page
+	# Accept both right-click, double-click, & drag'n'drop
+	#
 
-	$("ul.marks li").draggable
-		appendTo: "body"
-		helper: "clone"
+	$("ul.mark li, ul.seal li, ul.glyph li, ul.quintessence li")
+		.draggable
+			appendTo: "body"
+			helper: "clone"
+		.on "dblclick", ->
+			elem = $(@)[0].dataset
+			type = $(@).parent().attr('class')
+			image = elem.img
+			addRune(type, image)
+		.on "mousedown", (e) ->
+			if e.button == 2
+				elem = $(@)[0].dataset
+				type = $(@).parent().attr('class')
+				image = elem.img
+				addRune(type, image)
+
+	#
+	# Make rune page droppable
+	#
+
 	$(".rune-page").droppable 
 		drop: (event, ui) ->
 			elem = ui.draggable[0].dataset
-			type = elem.type
-			name = elem.name
-			console.log type
-			switch type
-				when "mark" then addMark(name)
-				when "seal" then addSeal(name)
-				when "glyph" then addGlyph(name)
-				when "quintessence" then addQuintessence(name)
+			type = $(ui.draggable[0]).parent().attr('class') # get type
+			image = elem.img
+			addRune(type, image)
 
-	addMark = (name) ->
-		if $('.rune-page div[class*=mark][class*=empty]').length
-			newElem = $('.rune-page div[class*=mark][class*=empty]').first().removeClass('empty')
-			console.log("addMark")
+	#
+	# Disable right-click context menu on rune page
+	#
 
-	addSeal = (name) ->
-		if $('.rune-page div[class*=seal]').find(".empty").length
-			newElem = $('.rune-page div[class*=seal][class*=empty]').first().removeClass('empty')
-			console.log("addSeal")
+	$('.rune-page, ul.mark li, ul.seal li, ul.glyph li, ul.quintessence li').bind "contextmenu", ->
+		false
 
-	addGlyph = (name) ->
-		if $('.rune-page div[class*=glyph]').find(".empty").length
-			newElem = $('.rune-page div[class*=glyph][class*=empty]').first().removeClass('empty')
-			console.log("addGlyph")
+	#
+	# Delete rune from rune page
+	# Accept both right-click & double-click
+	#
 
-	addQuintessence = (name) ->
-		if $('.rune-page div[class*=quintessence]').find(".empty").length
-			newElem = $('.rune-page div[class*=quintessence][class*=empty]').first().removeClass('empty')
-			console.log("addQuintessence")
+	$('.rune-page div[class*=mark], .rune-page div[class*=seal], .rune-page div[class*=glyph]')
+		.on "mousedown", (e) ->
+			if e.button == 2
+				$(@).children().removeAttr('class')
+				$(@).addClass('empty')
+		.on "dblclick", ->
+			$(@).children().removeAttr('class')
+			$(@).addClass('empty')
+
+	#
+	# Add rune to page rune
+	#
+
+	addRune = (type, image) ->
+		if $(".rune-page div[class*=#{type}][class*=empty]").length
+			newElem = $(".rune-page div[class*=#{type}][class*=empty]").first() # get first available elem
+			newElem
+				.removeClass('empty')
+				.children()
+				.addClass("icn-#{image}")

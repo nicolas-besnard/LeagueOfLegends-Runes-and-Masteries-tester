@@ -1,6 +1,6 @@
 @import "compass"
 
-$marks: sprite-map("runes/mark/*.png")
+$marks: sprite-map("runes/*.png")
 
 @each $i in sprite_names($marks)
 	.icn-#{$i}
@@ -13,7 +13,7 @@ body
 	padding-top: 60px
 
 .rune-page
-	background-image: image-url('runes/background.png')
+	background-image: image-url('background.png')
 	height: 436px
 	position: relative
 	width: 655px
@@ -25,11 +25,14 @@ body
 		height: 55px
 		background-size: 49px
 
+		span
+			zoom: .24
+
 	.quintessence
 		position: absolute
 		width: 100px
-		height: 100px
-		background-size: 100px
+		height: 85px
+		background-size: 100px!important
 
 	// MARK
 	$markPosition: (1 370px 24px), (2 370px 86px), (3 371px 158px), (4 312px 8px), (5 311px 70px), (6 323px 125px), (7 254px 29px), (8 264px 113px), (9 226px 76px)
@@ -40,7 +43,10 @@ body
 
 	div[class*=mark]
 		&.empty
-			background-image: image-url('runes/mark/mark.png')
+			background: $marks
+			display: inline-block
+			background-position: sprite-position($marks, mark)
+			+sprite-dimensions($marks, mark)
 
 	// SEAL
 	$sealPosition: (1 185px 38px), (2 179px 107px), (3 138px 66px), (4 112px 119px), (5 70px 154px), (6 43px 204px), (7 24px 265px), (8 5px 343px), (9 55px 371px)
@@ -51,7 +57,9 @@ body
 	
 	div[class*=seal]
 		&.empty
-			background-image: image-url('runes/seal/seal.png')
+			background: $marks
+			display: inline-block
+			background-position: sprite-position($marks, seal)
 
 	// GLYPH
 	$glyphPosition: (1 6px 399px), (2 8px 463px), (3 6px 550px), (4 53px 431px), (5 40px 507px), (6 40px 599px), (7 87px 482px), (8 79px 555px), (9 133px 576px)
@@ -62,7 +70,9 @@ body
 
 	div[class*=glyph]
 		&.empty
-			background-image: image-url('runes/glyph/glyph.png')
+			background: $marks
+			display: inline-block
+			background-position: sprite-position($marks, glyph)
 
 	// QUINTESSENCE
 	$quintessencePosition: (1 168px 403px), (2 224px 182px), (3 39px 28px)
@@ -73,7 +83,9 @@ body
 
 	div[class*=quintessence]
 		&.empty
-			background-image: image-url('runes/quintessence/quintessence.png')
+			background: $marks
+			display: inline-block
+			background-position: sprite-position($marks, quintessence)
 
 .rune-type
 	width: 200px
@@ -87,5 +99,5 @@ body
 
 		li
 			span.mark
-				zoom: .4
+				zoom: .17
 				margin: 10px 20px 0 10px
