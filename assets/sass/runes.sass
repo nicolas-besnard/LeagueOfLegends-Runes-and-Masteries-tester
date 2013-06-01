@@ -34,6 +34,9 @@ body
 		height: 85px
 		background-size: 100px!important
 
+		span
+			zoom: .4
+
 	// MARK
 	$markPosition: (1 370px 24px), (2 370px 86px), (3 371px 158px), (4 312px 8px), (5 311px 70px), (6 323px 125px), (7 254px 29px), (8 264px 113px), (9 226px 76px)
 	@each $p in $markPosition
@@ -62,7 +65,7 @@ body
 			background-position: sprite-position($marks, seal)
 
 	// GLYPH
-	$glyphPosition: (1 6px 399px), (2 8px 463px), (3 6px 550px), (4 53px 431px), (5 40px 507px), (6 40px 599px), (7 87px 482px), (8 79px 555px), (9 133px 576px)
+	$glyphPosition: (1 6px 399px), (2 53px 431px), (3 8px 463px), (4 87px 482px), (5 40px 507px), (6 6px 550px), (7 40px 599px), (8 79px 555px), (9 133px 576px)
 	@each $g in $glyphPosition
 		.glyph#{nth($g, 1)}
 			top: nth($g, 2)

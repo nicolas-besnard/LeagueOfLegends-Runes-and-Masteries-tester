@@ -152,6 +152,8 @@ body {
     width: 100px;
     height: 85px;
     background-size: 100px !important; }
+    .rune-page .quintessence span {
+      zoom: 0.4; }
   .rune-page .mark1 {
     top: 370px;
     left: 24px; }
@@ -220,23 +222,23 @@ body {
     top: 6px;
     left: 399px; }
   .rune-page .glyph2 {
-    top: 8px;
-    left: 463px; }
-  .rune-page .glyph3 {
-    top: 6px;
-    left: 550px; }
-  .rune-page .glyph4 {
     top: 53px;
     left: 431px; }
+  .rune-page .glyph3 {
+    top: 8px;
+    left: 463px; }
+  .rune-page .glyph4 {
+    top: 87px;
+    left: 482px; }
   .rune-page .glyph5 {
     top: 40px;
     left: 507px; }
   .rune-page .glyph6 {
+    top: 6px;
+    left: 550px; }
+  .rune-page .glyph7 {
     top: 40px;
     left: 599px; }
-  .rune-page .glyph7 {
-    top: 87px;
-    left: 482px; }
   .rune-page .glyph8 {
     top: 79px;
     left: 555px; }
